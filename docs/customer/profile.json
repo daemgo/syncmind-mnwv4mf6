@@ -1,0 +1,111 @@
+{
+  "companyName": "温州市国彩真空科技有限公司",
+  "shortName": "国彩真空",
+  "summary": "温州市国彩真空科技有限公司成立于2017年，位于瑞安市塘下镇，是一家专注于PVD真空镀膜加工的制造服务商。公司采用磁控离子溅射和多弧离子镀等绿色环保工艺，为五金配件、3C电子、汽摩配、眼镜、卫浴等行业提供表面镀膜服务，已进入宜家、苏泊尔、吉利汽车、春风动力等知名品牌供应链。生产面积约4000平方米，员工规模约18人，具备48小时现场技术响应和12小时加急交付能力。",
+  "industry": "制造业",
+  "subIndustry": "金属表面处理及真空镀膜",
+  "scale": "小微企业",
+  "mainBusiness": "PVD真空镀膜加工服务",
+  "products": [
+    { "name": "PVD磁控溅射镀膜", "description": "采用磁控离子溅射工艺，膜厚精度控制在0.1微米，适用于高端五金、电子、汽配等精密部件" },
+    { "name": "多弧离子镀膜", "description": "多弧离子镀工艺，膜层结合力强，适用于耐磨、耐腐蚀功能涂层" },
+    { "name": "PVD离子镀膜", "description": "真空离子镀技术，提供装饰膜和功能膜服务" },
+    { "name": "超硬纳米防护涂层", "description": "高端抛光拉丝及超硬质纳米防护涂层，适用于刀具、精密零件" }
+  ],
+  "targetCustomers": ["宜家(IKEA)", "苏泊尔(SUPOR)", "沃尔玛", "吉利汽车", "春风动力", "五金配件厂商", "眼镜制造商", "卫浴洁具厂商"],
+  "businessModel": "来料加工/OEM表面处理代工 + 设备维保服务",
+  "rating": "B+",
+  "tags": ["PVD真空镀膜", "绿色环保工艺", "汽摩配", "表面处理", "出口制造", "宜家供应商", "浙南本地服务", "48h响应"],
+  "website": "https://www.gczkkj.com",
+  "slogan": null,
+  "isListed": false,
+  "stockCode": null,
+  "revenueScale": null,
+  "registration": {
+    "registeredName": "温州市国彩真空科技有限公司",
+    "registeredCapital": "200万(万元)",
+    "paidCapital": null,
+    "establishedDate": "2017-11-20",
+    "legalRepresentative": "李进汉",
+    "businessStatus": "存续",
+    "shareholders": [
+      { "name": "李进汉", "percentage": null, "role": "法定代表人/股东" },
+      { "name": "卢献锐", "percentage": null, "role": "股东" }
+    ],
+    "branchCount": 0,
+    "interpretation": "注册资本200万为有限责任公司自然人投资或控股，企业类型表明为典型的温州民营家族/合伙企业；无分支机构说明尚处于单一工厂运营阶段，未开展异地扩张；2020年11月有过注册资本变更记录，股东结构稳定为两自然人；2021年2月更名并扩展经营范围，显示战略升级意图。",
+    "organizationType": "有限责任公司(自然人投资或控股)",
+    "keyFindings": [
+      "注册资本200万实缴情况不明，小微企业定位明确，资产规模有限",
+      "从'瑞安市国彩五金制品有限公司'更名为'温州市国彩真空科技有限公司'，战略定位从五金批发升级为真空镀膜科技服务",
+      "参保人数18人，属于典型温州家族式小微制造企业，扁平化管理特征明显"
+    ]
+  },
+  "organization": {
+    "type": "小微制造企业/来料加工服务商",
+    "decisionChain": "法定代表人李进汉直接决策→技术/生产负责人执行→客户需求驱动；采购决策链极短，老板直接拍板",
+    "keyPersons": [
+      { "name": "李进汉", "title": "法定代表人/执行董事" },
+      { "name": "卢献锐", "title": "股东/监事" }
+    ],
+    "salesStrategy": "通过服务宜家、苏泊尔、吉利等标杆客户建立行业口碑，以48小时本地响应能力和环保PVD工艺作为差异化卖点，主攻温州及浙南制造集群的表面处理需求"
+  },
+  "timing": {
+    "phase": "数字化萌芽阶段",
+    "analysisBasis": [
+      "员工18人、注册资本200万，属于典型小微企业",
+      "官网未体现ERP/MES等管理系统，营销依赖官网+电话",
+      "2021年战略升级更名，正在从传统五金向科技服务转型",
+      "服务吉利、苏泊尔等头部客户，但规模扩张受限于资金和产能"
+    ],
+    "entryStrategy": "以PVD工艺数字化管控和智能排产为切入点，帮助其提升良品率和交付透明度，从而绑定更多宜家级别客户；建议从生产可视化看板或质量追溯系统切入，投石问路",
+    "urgency": "中等——企业处于战略升级爬坡期，有优化管理提升竞争力的内生需求，但数字化认知有限，需要用成功案例和ROI说话"
+  },
+  "hiring": {
+    "keySignals": ["员工规模约18人(参保人数)，属于微型制造企业", "官网承诺48小时内工程师赴现场服务，说明技术团队有一定规模", "无招聘平台信息，小微制造依赖本地劳务市场和熟人推荐", "来料加工模式对操作工需求较高，人员流动性可能较大"]
+  },
+  "competition": {
+    "industryRank": null,
+    "marketShare": null,
+    "mainCompetitors": ["温州华弘真空科技有限公司(同城PVD企业)", "温州市华宇真空电镀设备制造有限公司(已注销)", "温州佳能真空镀膜设备科技有限公司", "温州市聚力真空镀膜材料有限公司"],
+    "knownClients": ["宜家(IKEA)", "苏泊尔", "沃尔玛", "吉利汽车", "春风动力"]
+  },
+  "riskAndPolicy": {
+    "legal": {
+      "lawsuitCount": null,
+      "executedPerson": false,
+      "dishonestPerson": false,
+      "businessAnomalies": [],
+      "equityFreeze": false
+    },
+    "policy": {
+      "isSpecializedSME": false,
+      "smeLevel": "",
+      "isHighTech": false,
+      "digitalTransformation": false,
+      "esgGreen": false
+    }
+  },
+  "painPoints": [
+    { "area": "生产管理", "description": "来料加工模式订单批次多、规格杂，当前依赖人工排产和经验调度，插单和交期协调效率低，易出错", "severity": "高" },
+    { "area": "质量管理", "description": "膜厚精度要求0.1微米但全检依赖人工，良品率虽高于行业均值但缺乏SPC统计过程控制，质量一致性存在隐患", "severity": "高" },
+    { "area": "设备管理", "description": "真空镀膜设备运维依赖外部支持和驻场工程师，设备突发故障直接影响客户交期，OEE提升空间大", "severity": "中" },
+    { "area": "客户管理", "description": "宜家、苏泊尔等客户对供应商有系统化考核要求（交付、质量响应、数据报告），Excel/微信管理难以满足数字化对接需求", "severity": "中" },
+    { "area": "成本核算", "description": "多品种小批量加工模式下，单批次成本（材料损耗、工时、能源）难以精确归集，报价和利润管理缺乏数据支撑", "severity": "中" }
+  ],
+  "opportunities": [
+    { "area": "生产管理/APS排程", "description": "针对来料加工多品种小批量特点，引入轻量级APS或排产系统，提升订单调度效率和交期准确率，降低因插单导致的混乱和客户投诉", "likelihood": "高" },
+    { "area": "质量管理/QMS追溯", "description": "为满足宜家等国际客户对供应商质量数据可追溯的要求，建立条码批次追溯和SPC质量控制系统，提升客户粘性和审核通过率", "likelihood": "高" },
+    { "area": "设备管理/OEE分析", "description": "通过设备物联和OEE分析模块，预测性维护减少突发停机，优化镀膜工艺参数从而提升良品率和膜厚一致性，为进入更高要求的医疗器械或半导体镀膜领域铺垫", "likelihood": "中" }
+  ],
+  "analysisPath": "B+",
+  "confidence": 0.72,
+  "metadata": {
+    "createdAt": "2026-04-13",
+    "updatedAt": "2026-04-13",
+    "createdBy": "AI",
+    "version": "1.0",
+    "sources": ["官网 gczkkj.com", "天眼查/企查查工商信息", "公开新闻报道"],
+    "confidence": 0.72
+  }
+}
