@@ -1,0 +1,70 @@
+specHash: "79b800e5440e3e17a2088343a86e28e4"
+generatedAt: "2026-04-14T00:00:00Z"
+sourceMode: "spec"
+modules:
+  - moduleId: "production"
+    moduleName: "生产管理"
+    locked: false
+    files:
+      - src/routes/production/orders/index.tsx
+      - src/routes/production/orders/$id.tsx
+      - src/routes/index.tsx
+  - moduleId: "quality-batches"
+    moduleName: "批次追溯"
+    locked: false
+    files:
+      - src/routes/quality/batches/index.tsx
+      - src/routes/quality/batches/$id.tsx
+  - moduleId: "equipment-oee"
+    moduleName: "OEE分析"
+    locked: false
+    files:
+      - src/routes/equipment/oee/index.tsx
+  - moduleId: "production-scheduling"
+    moduleName: "排产计划"
+    locked: false
+    files: []
+  - moduleId: "production-reports"
+    moduleName: "报工管理"
+    locked: false
+    files: []
+  - moduleId: "quality-inspection"
+    moduleName: "质检记录"
+    locked: false
+    files: []
+  - moduleId: "quality-spc"
+    moduleName: "SPC控制图"
+    locked: false
+    files: []
+  - moduleId: "quality-reports"
+    moduleName: "报告导出"
+    locked: false
+    files: []
+  - moduleId: "equipment-assets"
+    moduleName: "设备台账"
+    locked: false
+    files: []
+  - moduleId: "equipment-inspection"
+    moduleName: "点检记录"
+    locked: false
+    files: []
+  - moduleId: "cost-batches"
+    moduleName: "批次成本"
+    locked: false
+    files: []
+  - moduleId: "cost-profit"
+    moduleName: "利润分析"
+    locked: false
+    files: []
+  - moduleId: "portal-progress"
+    moduleName: "订单进度"
+    locked: false
+    files: []
+  - moduleId: "portal-reports"
+    moduleName: "报告下载"
+    locked: false
+    files: []
+  - moduleId: "system-settings"
+    moduleName: "基础配置"
+    locked: false
+    files: []

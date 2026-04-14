@@ -10,33 +10,260 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SystemSettingsIndexRouteImport } from './routes/system/settings/index'
+import { Route as QualitySpcIndexRouteImport } from './routes/quality/spc/index'
+import { Route as QualityReportsIndexRouteImport } from './routes/quality/reports/index'
+import { Route as QualityInspectionIndexRouteImport } from './routes/quality/inspection/index'
+import { Route as QualityBatchesIndexRouteImport } from './routes/quality/batches/index'
+import { Route as ProductionSchedulingIndexRouteImport } from './routes/production/scheduling/index'
+import { Route as ProductionReportsIndexRouteImport } from './routes/production/reports/index'
+import { Route as ProductionOrdersIndexRouteImport } from './routes/production/orders/index'
+import { Route as PortalReportsIndexRouteImport } from './routes/portal/reports/index'
+import { Route as PortalProgressIndexRouteImport } from './routes/portal/progress/index'
+import { Route as EquipmentOeeIndexRouteImport } from './routes/equipment/oee/index'
+import { Route as EquipmentInspectionIndexRouteImport } from './routes/equipment/inspection/index'
+import { Route as EquipmentAssetsIndexRouteImport } from './routes/equipment/assets/index'
+import { Route as CostProfitIndexRouteImport } from './routes/cost/profit/index'
+import { Route as CostBatchesIndexRouteImport } from './routes/cost/batches/index'
+import { Route as QualityBatchesIdRouteImport } from './routes/quality/batches/$id'
+import { Route as ProductionOrdersIdRouteImport } from './routes/production/orders/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SystemSettingsIndexRoute = SystemSettingsIndexRouteImport.update({
+  id: '/system/settings/',
+  path: '/system/settings/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QualitySpcIndexRoute = QualitySpcIndexRouteImport.update({
+  id: '/quality/spc/',
+  path: '/quality/spc/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QualityReportsIndexRoute = QualityReportsIndexRouteImport.update({
+  id: '/quality/reports/',
+  path: '/quality/reports/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QualityInspectionIndexRoute = QualityInspectionIndexRouteImport.update({
+  id: '/quality/inspection/',
+  path: '/quality/inspection/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QualityBatchesIndexRoute = QualityBatchesIndexRouteImport.update({
+  id: '/quality/batches/',
+  path: '/quality/batches/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductionSchedulingIndexRoute =
+  ProductionSchedulingIndexRouteImport.update({
+    id: '/production/scheduling/',
+    path: '/production/scheduling/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProductionReportsIndexRoute = ProductionReportsIndexRouteImport.update({
+  id: '/production/reports/',
+  path: '/production/reports/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductionOrdersIndexRoute = ProductionOrdersIndexRouteImport.update({
+  id: '/production/orders/',
+  path: '/production/orders/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortalReportsIndexRoute = PortalReportsIndexRouteImport.update({
+  id: '/portal/reports/',
+  path: '/portal/reports/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortalProgressIndexRoute = PortalProgressIndexRouteImport.update({
+  id: '/portal/progress/',
+  path: '/portal/progress/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EquipmentOeeIndexRoute = EquipmentOeeIndexRouteImport.update({
+  id: '/equipment/oee/',
+  path: '/equipment/oee/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EquipmentInspectionIndexRoute =
+  EquipmentInspectionIndexRouteImport.update({
+    id: '/equipment/inspection/',
+    path: '/equipment/inspection/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const EquipmentAssetsIndexRoute = EquipmentAssetsIndexRouteImport.update({
+  id: '/equipment/assets/',
+  path: '/equipment/assets/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CostProfitIndexRoute = CostProfitIndexRouteImport.update({
+  id: '/cost/profit/',
+  path: '/cost/profit/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CostBatchesIndexRoute = CostBatchesIndexRouteImport.update({
+  id: '/cost/batches/',
+  path: '/cost/batches/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QualityBatchesIdRoute = QualityBatchesIdRouteImport.update({
+  id: '/quality/batches/$id',
+  path: '/quality/batches/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductionOrdersIdRoute = ProductionOrdersIdRouteImport.update({
+  id: '/production/orders/$id',
+  path: '/production/orders/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/production/orders/$id': typeof ProductionOrdersIdRoute
+  '/quality/batches/$id': typeof QualityBatchesIdRoute
+  '/cost/batches/': typeof CostBatchesIndexRoute
+  '/cost/profit/': typeof CostProfitIndexRoute
+  '/equipment/assets/': typeof EquipmentAssetsIndexRoute
+  '/equipment/inspection/': typeof EquipmentInspectionIndexRoute
+  '/equipment/oee/': typeof EquipmentOeeIndexRoute
+  '/portal/progress/': typeof PortalProgressIndexRoute
+  '/portal/reports/': typeof PortalReportsIndexRoute
+  '/production/orders/': typeof ProductionOrdersIndexRoute
+  '/production/reports/': typeof ProductionReportsIndexRoute
+  '/production/scheduling/': typeof ProductionSchedulingIndexRoute
+  '/quality/batches/': typeof QualityBatchesIndexRoute
+  '/quality/inspection/': typeof QualityInspectionIndexRoute
+  '/quality/reports/': typeof QualityReportsIndexRoute
+  '/quality/spc/': typeof QualitySpcIndexRoute
+  '/system/settings/': typeof SystemSettingsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/production/orders/$id': typeof ProductionOrdersIdRoute
+  '/quality/batches/$id': typeof QualityBatchesIdRoute
+  '/cost/batches': typeof CostBatchesIndexRoute
+  '/cost/profit': typeof CostProfitIndexRoute
+  '/equipment/assets': typeof EquipmentAssetsIndexRoute
+  '/equipment/inspection': typeof EquipmentInspectionIndexRoute
+  '/equipment/oee': typeof EquipmentOeeIndexRoute
+  '/portal/progress': typeof PortalProgressIndexRoute
+  '/portal/reports': typeof PortalReportsIndexRoute
+  '/production/orders': typeof ProductionOrdersIndexRoute
+  '/production/reports': typeof ProductionReportsIndexRoute
+  '/production/scheduling': typeof ProductionSchedulingIndexRoute
+  '/quality/batches': typeof QualityBatchesIndexRoute
+  '/quality/inspection': typeof QualityInspectionIndexRoute
+  '/quality/reports': typeof QualityReportsIndexRoute
+  '/quality/spc': typeof QualitySpcIndexRoute
+  '/system/settings': typeof SystemSettingsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/production/orders/$id': typeof ProductionOrdersIdRoute
+  '/quality/batches/$id': typeof QualityBatchesIdRoute
+  '/cost/batches/': typeof CostBatchesIndexRoute
+  '/cost/profit/': typeof CostProfitIndexRoute
+  '/equipment/assets/': typeof EquipmentAssetsIndexRoute
+  '/equipment/inspection/': typeof EquipmentInspectionIndexRoute
+  '/equipment/oee/': typeof EquipmentOeeIndexRoute
+  '/portal/progress/': typeof PortalProgressIndexRoute
+  '/portal/reports/': typeof PortalReportsIndexRoute
+  '/production/orders/': typeof ProductionOrdersIndexRoute
+  '/production/reports/': typeof ProductionReportsIndexRoute
+  '/production/scheduling/': typeof ProductionSchedulingIndexRoute
+  '/quality/batches/': typeof QualityBatchesIndexRoute
+  '/quality/inspection/': typeof QualityInspectionIndexRoute
+  '/quality/reports/': typeof QualityReportsIndexRoute
+  '/quality/spc/': typeof QualitySpcIndexRoute
+  '/system/settings/': typeof SystemSettingsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/production/orders/$id'
+    | '/quality/batches/$id'
+    | '/cost/batches/'
+    | '/cost/profit/'
+    | '/equipment/assets/'
+    | '/equipment/inspection/'
+    | '/equipment/oee/'
+    | '/portal/progress/'
+    | '/portal/reports/'
+    | '/production/orders/'
+    | '/production/reports/'
+    | '/production/scheduling/'
+    | '/quality/batches/'
+    | '/quality/inspection/'
+    | '/quality/reports/'
+    | '/quality/spc/'
+    | '/system/settings/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/production/orders/$id'
+    | '/quality/batches/$id'
+    | '/cost/batches'
+    | '/cost/profit'
+    | '/equipment/assets'
+    | '/equipment/inspection'
+    | '/equipment/oee'
+    | '/portal/progress'
+    | '/portal/reports'
+    | '/production/orders'
+    | '/production/reports'
+    | '/production/scheduling'
+    | '/quality/batches'
+    | '/quality/inspection'
+    | '/quality/reports'
+    | '/quality/spc'
+    | '/system/settings'
+  id:
+    | '__root__'
+    | '/'
+    | '/production/orders/$id'
+    | '/quality/batches/$id'
+    | '/cost/batches/'
+    | '/cost/profit/'
+    | '/equipment/assets/'
+    | '/equipment/inspection/'
+    | '/equipment/oee/'
+    | '/portal/progress/'
+    | '/portal/reports/'
+    | '/production/orders/'
+    | '/production/reports/'
+    | '/production/scheduling/'
+    | '/quality/batches/'
+    | '/quality/inspection/'
+    | '/quality/reports/'
+    | '/quality/spc/'
+    | '/system/settings/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ProductionOrdersIdRoute: typeof ProductionOrdersIdRoute
+  QualityBatchesIdRoute: typeof QualityBatchesIdRoute
+  CostBatchesIndexRoute: typeof CostBatchesIndexRoute
+  CostProfitIndexRoute: typeof CostProfitIndexRoute
+  EquipmentAssetsIndexRoute: typeof EquipmentAssetsIndexRoute
+  EquipmentInspectionIndexRoute: typeof EquipmentInspectionIndexRoute
+  EquipmentOeeIndexRoute: typeof EquipmentOeeIndexRoute
+  PortalProgressIndexRoute: typeof PortalProgressIndexRoute
+  PortalReportsIndexRoute: typeof PortalReportsIndexRoute
+  ProductionOrdersIndexRoute: typeof ProductionOrdersIndexRoute
+  ProductionReportsIndexRoute: typeof ProductionReportsIndexRoute
+  ProductionSchedulingIndexRoute: typeof ProductionSchedulingIndexRoute
+  QualityBatchesIndexRoute: typeof QualityBatchesIndexRoute
+  QualityInspectionIndexRoute: typeof QualityInspectionIndexRoute
+  QualityReportsIndexRoute: typeof QualityReportsIndexRoute
+  QualitySpcIndexRoute: typeof QualitySpcIndexRoute
+  SystemSettingsIndexRoute: typeof SystemSettingsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +275,147 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/system/settings/': {
+      id: '/system/settings/'
+      path: '/system/settings'
+      fullPath: '/system/settings/'
+      preLoaderRoute: typeof SystemSettingsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quality/spc/': {
+      id: '/quality/spc/'
+      path: '/quality/spc'
+      fullPath: '/quality/spc/'
+      preLoaderRoute: typeof QualitySpcIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quality/reports/': {
+      id: '/quality/reports/'
+      path: '/quality/reports'
+      fullPath: '/quality/reports/'
+      preLoaderRoute: typeof QualityReportsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quality/inspection/': {
+      id: '/quality/inspection/'
+      path: '/quality/inspection'
+      fullPath: '/quality/inspection/'
+      preLoaderRoute: typeof QualityInspectionIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quality/batches/': {
+      id: '/quality/batches/'
+      path: '/quality/batches'
+      fullPath: '/quality/batches/'
+      preLoaderRoute: typeof QualityBatchesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/production/scheduling/': {
+      id: '/production/scheduling/'
+      path: '/production/scheduling'
+      fullPath: '/production/scheduling/'
+      preLoaderRoute: typeof ProductionSchedulingIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/production/reports/': {
+      id: '/production/reports/'
+      path: '/production/reports'
+      fullPath: '/production/reports/'
+      preLoaderRoute: typeof ProductionReportsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/production/orders/': {
+      id: '/production/orders/'
+      path: '/production/orders'
+      fullPath: '/production/orders/'
+      preLoaderRoute: typeof ProductionOrdersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portal/reports/': {
+      id: '/portal/reports/'
+      path: '/portal/reports'
+      fullPath: '/portal/reports/'
+      preLoaderRoute: typeof PortalReportsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portal/progress/': {
+      id: '/portal/progress/'
+      path: '/portal/progress'
+      fullPath: '/portal/progress/'
+      preLoaderRoute: typeof PortalProgressIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipment/oee/': {
+      id: '/equipment/oee/'
+      path: '/equipment/oee'
+      fullPath: '/equipment/oee/'
+      preLoaderRoute: typeof EquipmentOeeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipment/inspection/': {
+      id: '/equipment/inspection/'
+      path: '/equipment/inspection'
+      fullPath: '/equipment/inspection/'
+      preLoaderRoute: typeof EquipmentInspectionIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipment/assets/': {
+      id: '/equipment/assets/'
+      path: '/equipment/assets'
+      fullPath: '/equipment/assets/'
+      preLoaderRoute: typeof EquipmentAssetsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cost/profit/': {
+      id: '/cost/profit/'
+      path: '/cost/profit'
+      fullPath: '/cost/profit/'
+      preLoaderRoute: typeof CostProfitIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cost/batches/': {
+      id: '/cost/batches/'
+      path: '/cost/batches'
+      fullPath: '/cost/batches/'
+      preLoaderRoute: typeof CostBatchesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quality/batches/$id': {
+      id: '/quality/batches/$id'
+      path: '/quality/batches/$id'
+      fullPath: '/quality/batches/$id'
+      preLoaderRoute: typeof QualityBatchesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/production/orders/$id': {
+      id: '/production/orders/$id'
+      path: '/production/orders/$id'
+      fullPath: '/production/orders/$id'
+      preLoaderRoute: typeof ProductionOrdersIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ProductionOrdersIdRoute: ProductionOrdersIdRoute,
+  QualityBatchesIdRoute: QualityBatchesIdRoute,
+  CostBatchesIndexRoute: CostBatchesIndexRoute,
+  CostProfitIndexRoute: CostProfitIndexRoute,
+  EquipmentAssetsIndexRoute: EquipmentAssetsIndexRoute,
+  EquipmentInspectionIndexRoute: EquipmentInspectionIndexRoute,
+  EquipmentOeeIndexRoute: EquipmentOeeIndexRoute,
+  PortalProgressIndexRoute: PortalProgressIndexRoute,
+  PortalReportsIndexRoute: PortalReportsIndexRoute,
+  ProductionOrdersIndexRoute: ProductionOrdersIndexRoute,
+  ProductionReportsIndexRoute: ProductionReportsIndexRoute,
+  ProductionSchedulingIndexRoute: ProductionSchedulingIndexRoute,
+  QualityBatchesIndexRoute: QualityBatchesIndexRoute,
+  QualityInspectionIndexRoute: QualityInspectionIndexRoute,
+  QualityReportsIndexRoute: QualityReportsIndexRoute,
+  QualitySpcIndexRoute: QualitySpcIndexRoute,
+  SystemSettingsIndexRoute: SystemSettingsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
