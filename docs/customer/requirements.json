@@ -1,0 +1,302 @@
+{
+  "version": "v0.1",
+  "status": "draft",
+  "confidence": "low",
+  "confidenceNotes": "冷启动推演，数据来源为企业档案摘要（profile.json）及行业通用痛点，尚无客户访谈和现场调研确认，部分需求为假设推断，待后续 screening 阶段验证。",
+
+  "profile": {
+    "companyName": "温州市国彩真空科技有限公司",
+    "shortName": "国彩真空",
+    "industry": "制造业 / 金属表面处理及真空镀膜",
+    "scale": "小微企业",
+    "mainBusiness": "PVD真空镀膜来料加工/OEM代工 + 设备维保服务",
+    "digitalMaturity": "数字化萌芽阶段"
+  },
+
+  "salesInput": {
+    "summary": "客户为浙南地区PVD真空镀膜来料加工服务商，18人规模，服务宜家、苏泊尔、吉利等头部客户。来料加工模式导致订单批次多、规格杂，当前依赖人工排产和经验调度，质量管控依赖人工全检，设备运维依赖外部支持。客户对交期准确率、质量数据追溯和客户数字化对接有明确需求，数字化意愿中等，需成功案例和ROI说服。",
+    "source": "profile.json 摘要推演",
+    "lastUpdated": "2026-04-14"
+  },
+
+  "needs": [
+    {
+      "id": "REQ-001",
+      "category": "生产管理",
+      "title": "轻量级APS排程系统",
+      "description": "针对来料加工多品种小批量特点，实现订单录入后自动排产，支持插单重排和交期模拟，降低人工排产错误率，提升交期准确率。",
+      "source": "painPoints: 生产管理（severity: 高）",
+      "priority": "高",
+      "confidence": "low",
+      "note": "尚未与客户确认排产复杂度、SKU数量和日均订单量，待 screening 收集。"
+    },
+    {
+      "id": "REQ-002",
+      "category": "质量管理",
+      "title": "SPC统计过程控制与批次追溯",
+      "description": "膜厚精度要求0.1微米，需在镀膜工序关键节点自动采集膜厚/温度/真空度等参数，超差自动预警；结合条码实现批次从原料到成品的全程追溯，满足宜家等国际客户审核要求。",
+      "source": "painPoints: 质量管理（severity: 高）+ opportunities: QMS追溯",
+      "priority": "高",
+      "confidence": "low",
+      "note": "需确认现有设备是否具备数据接口，条码标签规格，以及宜家等客户的具体审核标准版本。"
+    },
+    {
+      "id": "REQ-003",
+      "category": "设备管理",
+      "title": "设备OEE监控与预测性维护",
+      "description": "采集真空镀膜设备运行数据（开关机、故障、待机、产能），计算OEE指标，建立故障预警模型，减少突发停机对客户交期的影响。",
+      "source": "painPoints: 设备管理（severity: 中）+ opportunities: OEE分析",
+      "priority": "中",
+      "confidence": "low",
+      "note": "需现场评估设备PLC/DCS接口开放情况，以及是否有驻场工程师数据支持模型训练。"
+    },
+    {
+      "id": "REQ-004",
+      "category": "生产执行",
+      "title": "工序报工与生产透明化",
+      "description": "工位端快速报工（扫码/移动端），实时呈现工单进度和工序良品率，让生产主管和老板随时掌握车间状态，减少信息传递延迟。",
+      "source": "painPoints: 生产管理 + 质量管理综合推导",
+      "priority": "中",
+      "confidence": "low",
+      "note": "需确认操作工对移动端/PDA的使用接受度，以及车间网络覆盖情况。"
+    },
+    {
+      "id": "REQ-005",
+      "category": "客户管理",
+      "title": "客户数字化对接与数据报告",
+      "description": "为宜家、苏泊尔等客户提供质量数据报告（批次追溯单、SPC趋势图）和交付状态在线查询，替代当前的Excel/微信人工对接方式。",
+      "source": "painPoints: 客户管理（severity: 中）",
+      "priority": "中",
+      "confidence": "low",
+      "note": "需确认各客户是否有现成的供应商数据对接平台（如EDI/CIM），以及对接频次和格式要求。"
+    },
+    {
+      "id": "REQ-006",
+      "category": "成本管理",
+      "title": "批次成本归集与报价支持",
+      "description": "在多品种小批量模式下，按工单归集材料损耗、工时、能源消耗数据，计算单批次真实成本，支撑报价决策和利润分析。",
+      "source": "painPoints: 成本核算（severity: 中）",
+      "priority": "中",
+      "confidence": "low",
+      "note": "需确认客户是否有ERP或财务系统，以及能源计量设备（电表/气表）是否已物联。"
+    },
+    {
+      "id": "REQ-007",
+      "category": "质量管理",
+      "title": "外观缺陷AI视觉检测（可选）",
+      "description": "镀膜后外观检验（划伤、斑点、色差）引入机器视觉，降低人工全检负担，提升检出率和一致性。",
+      "source": "opportunities: 质量管理系统延伸推导",
+      "priority": "低",
+      "confidence": "low",
+      "note": "当前优先级低，作为后续升级方向。需与 REQ-002 捆绑评估，初期可仅做人工检验流程数字化。"
+    },
+    {
+      "id": "REQ-008",
+      "category": "系统集成",
+      "title": "与现有设备控制系统的数据集成",
+      "description": "真空镀膜设备（镀膜机、真空泵、电源等）的控制系统数据需能接入系统，支持实时采集和工艺参数下发。",
+      "source": "REQ-002/REQ-003 依赖分析",
+      "priority": "高",
+      "confidence": "low",
+      "note": "这是数据采集层的关键技术约束，需现场调研设备品牌、型号和通信协议（Modbus/OPC-UA/私有协议）。"
+    }
+  ],
+
+  "users": [
+    {
+      "role": "老板 / 法定代表人",
+      "name": "李进汉",
+      "responsibility": "数字化决策、预算审批，关注交期准确率、客户满意度和投资回报",
+      "painPoints": "Excel/微信管理效率低，缺乏数据支撑决策；对客户交期承诺心里没底",
+      "evaluationCriteria": "系统上线后交期准确率提升、客户投诉减少、ROI可见"
+    },
+    {
+      "role": "生产主管 / 技术负责人",
+      "name": "待确认",
+      "responsibility": "日常排产调度、工序报工监督、设备协调、应对插单和急单",
+      "painPoints": "人工排产易出错，插单协调耗时，设备故障影响排产计划缺乏预警",
+      "evaluationCriteria": "排产效率提升、插单处理时间缩短、车间状态一目了然"
+    },
+    {
+      "role": "操作工",
+      "name": "待确认",
+      "responsibility": "工序报工执行、膜厚数据采集、外观检验、设备日常点检",
+      "painPoints": "增加操作负担、担心系统复杂不会用、与现有工作习惯冲突",
+      "evaluationCriteria": "操作简单、不增加过多负担、有问题能快速获得支持"
+    }
+  ],
+
+  "scope": {
+    "inScope": [
+      "APS轻量级排产（多品种小批量场景）",
+      "QMS质量管理系统（SPC + 批次条码追溯）",
+      "设备OEE数据采集与监控",
+      "工序报工与生产进度透明化",
+      "批次成本归集",
+      "客户数据报告导出（满足宜家/苏泊尔考核要求）"
+    ],
+    "outOfScope": [
+      "ERP/财务系统全流程覆盖",
+      "供应链采购管理",
+      "外观AI视觉检测（列为后续升级项）",
+      "多工厂/多车间管理",
+      "与客户ERP系统深度集成（仅限报告导出）"
+    ],
+    "phases": [
+      {
+        "phase": 1,
+        "title": "基础数字化",
+        "content": "QMS批次追溯 + SPC + 工序报工，解决质量数据追溯和客户审核需求"
+      },
+      {
+        "phase": 2,
+        "title": "生产提效",
+        "content": "APS轻量级排产 + 设备OEE监控，提升交期准确率"
+      },
+      {
+        "phase": 3,
+        "title": "经营决策支持",
+        "content": "批次成本归集 + 客户数据报告平台 + 预测性维护"
+      }
+    ]
+  },
+
+  "pendingQuestions": [
+    {
+      "id": "PQ-001",
+      "category": "screening",
+      "question": "目前日均处理工单数量和SKU规格种类大概是多少？订单批次多、规格杂到什么程度（举例）？",
+      "rationale": "评估APS排产复杂度，决定方案是规则引擎还是AI优化引擎，影响技术路线和报价。",
+      "priority": "高"
+    },
+    {
+      "id": "PQ-002",
+      "category": "screening",
+      "question": "现有真空镀膜设备（镀膜机型号）是否支持数据采集？设备控制系统是什么品牌/协议（Modbus/OPC-UA/其他）？",
+      "rationale": "评估REQ-008系统集成可行性，若设备无数据接口则方案需要额外硬件改造投入，影响整体预算。",
+      "priority": "高"
+    },
+    {
+      "id": "PQ-003",
+      "category": "screening",
+      "question": "宜家和苏泊尔对供应商质量数据追溯的具体要求是什么？需要提供哪些报告？格式和频率要求？",
+      "rationale": "明确REQ-002和REQ-005的交付标准，避免验收时出现理解偏差。",
+      "priority": "高"
+    },
+    {
+      "id": "PQ-004",
+      "category": "deep-dive",
+      "question": "老板对本次数字化的核心预期是什么？期望解决的首要问题是交期、质量还是成本？优先级是什么？",
+      "rationale": "确认需求优先级，帮助确定phase 1的交付范围，以及后续提案的价值主张。",
+      "priority": "中"
+    },
+    {
+      "id": "PQ-005",
+      "category": "deep-dive",
+      "question": "公司目前有多少台生产设备？设备突发故障的平均处理时间（MTTR）是多少？因设备问题导致的客户投诉频率？",
+      "rationale": "量化设备管理的痛点，为OEE模块的ROI测算提供数据支撑。",
+      "priority": "中"
+    },
+    {
+      "id": "PQ-006",
+      "category": "deep-dive",
+      "question": "操作工目前的报工方式是什么（纸质/Excel/其他）？员工对使用移动端或扫码报工的接受度如何？",
+      "rationale": "评估REQ-004的落地难度，若员工抵触情绪高，需要设计更简单的交互方案或安排专项培训。",
+      "priority": "中"
+    },
+    {
+      "id": "PQ-007",
+      "category": "deep-dive",
+      "question": "当前批次成本如何计算？有没有单独的能源计量设备（电表、气体流量计）？材料损耗如何记录？",
+      "rationale": "评估REQ-006的成本归集可行性，若基础计量数据缺失，初期只能做工时统计，完整成本模型需后续迭代。",
+      "priority": "中"
+    },
+    {
+      "id": "PQ-008",
+      "category": "closing",
+      "question": "老板对本次数字化的预算区间预期是多少？希望多长时间内看到明显效果？",
+      "rationale": "明确预算范围和期望周期，匹配SaaS订阅模式或本地部署方案，设定合理的ROI承诺。",
+      "priority": "高"
+    }
+  ],
+
+  "risksAndAssumptions": {
+    "risks": [
+      {
+        "id": "RISK-001",
+        "description": "设备数据接口不开放或协议私有，导致OEE数据采集和SPC参数采集无法实施，需额外硬件改造或无法采集。",
+        "mitigation": "现场调研阶段必须对核心设备进行接口可行性评估，提前识别风险并与设备厂商沟通。",
+        "severity": "高"
+      },
+      {
+        "id": "RISK-002",
+        "description": "操作工对数字化工具接受度低，报工数据采集不上来，系统沦为花架子。",
+        "mitigation": "设计极简交互（扫码+确认），老板自上而下推动，选择车间中配合度高的工段先行试点。",
+        "severity": "中"
+      },
+      {
+        "id": "RISK-003",
+        "description": "多品种小批量的排产复杂度超出轻量级APS能力，排产结果不理想导致客户弃用。",
+        "mitigation": "先以规则引擎+人工调整模式落地，积累数据后再评估AI排产升级；明确系统定位是辅助决策而非全自动替代。",
+        "severity": "中"
+      },
+      {
+        "id": "RISK-004",
+        "description": "客户（宜家/苏泊尔）对数据格式有严格要求，系统输出的报告不符合客户要求导致返工。",
+        "mitigation": "在screening阶段直接联系或模拟客户确认报告模板，避免闭门造车；可考虑让客户提供现有报告样本作为参照。",
+        "severity": "低"
+      }
+    ],
+    "assumptions": [
+      {
+        "id": "ASMP-001",
+        "description": "假设真空镀膜设备具备Modbus/OPC-UA等标准通信接口，或可通过加装数据采集器实现数据接入。",
+        "confidence": "low"
+      },
+      {
+        "id": "ASMP-002",
+        "description": "假设当前痛点（人工排产、人工全检）已严重到影响客户满意度和业务拓展，老板有改善意愿。",
+        "confidence": "low"
+      },
+      {
+        "id": "ASMP-003",
+        "description": "假设宜家、苏泊尔等客户对供应商数字化考核为加分项而非强制准入门槛，短期内不会因不达标而影响订单。",
+        "confidence": "low"
+      },
+      {
+        "id": "ASMP-004",
+        "description": "假设18人小微企业中老板（李进汉）能直接推动系统落地，操作层阻力相对可控。",
+        "confidence": "low"
+      }
+    ]
+  },
+
+  "completionRate": {
+    "overall": 25,
+    "breakdown": {
+      "needsDefinition": 40,
+      "userIdentification": 30,
+      "scopeDefinition": 50,
+      "technicalFeasibility": 10,
+      "businessCase": 10,
+      "stakeholderAlignment": 10
+    },
+    "note": "冷启动阶段完成度偏低，主要缺失：客户访谈（screening）、现场调研（设备接口/车间网络）、竞品对比（验证方案合理性）、ROI测算数据。目标在screening完成后提升至50%以上。"
+  },
+
+  "sources": {
+    "primary": ["profile.json（企业档案摘要）"],
+    "secondary": ["行业通用痛点（制造业PVD细分）"],
+    "none": ["sales-guide.json（不存在）", "知识库（无可用数据）", "followups.json（无拜访记录）"],
+    "note": "数据来源极度有限，所有需求均为推演假设，必须通过screening客户访谈和现场调研进行验证和修正。"
+  },
+
+  "meta": {
+    "createdBy": "requirements-skill",
+    "createdAt": "2026-04-14",
+    "mode": "cold-start",
+    "versionHistory": [
+      { "version": "v0.1", "date": "2026-04-14", "note": "初始版本，冷启动推演，基于profile.json摘要生成，所有confidence均为low" }
+    ]
+  }
+}
