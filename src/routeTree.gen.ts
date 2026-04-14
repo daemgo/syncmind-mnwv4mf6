@@ -17,6 +17,7 @@ import { Route as QualityInspectionIndexRouteImport } from './routes/quality/ins
 import { Route as QualityBatchesIndexRouteImport } from './routes/quality/batches/index'
 import { Route as ProductionSchedulingIndexRouteImport } from './routes/production/scheduling/index'
 import { Route as ProductionReportsIndexRouteImport } from './routes/production/reports/index'
+import { Route as ProductionProgressIndexRouteImport } from './routes/production/progress/index'
 import { Route as ProductionOrdersIndexRouteImport } from './routes/production/orders/index'
 import { Route as PortalReportsIndexRouteImport } from './routes/portal/reports/index'
 import { Route as PortalProgressIndexRouteImport } from './routes/portal/progress/index'
@@ -69,6 +70,11 @@ const ProductionSchedulingIndexRoute =
 const ProductionReportsIndexRoute = ProductionReportsIndexRouteImport.update({
   id: '/production/reports/',
   path: '/production/reports/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductionProgressIndexRoute = ProductionProgressIndexRouteImport.update({
+  id: '/production/progress/',
+  path: '/production/progress/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductionOrdersIndexRoute = ProductionOrdersIndexRouteImport.update({
@@ -147,6 +153,7 @@ export interface FileRoutesByFullPath {
   '/portal/progress/': typeof PortalProgressIndexRoute
   '/portal/reports/': typeof PortalReportsIndexRoute
   '/production/orders/': typeof ProductionOrdersIndexRoute
+  '/production/progress/': typeof ProductionProgressIndexRoute
   '/production/reports/': typeof ProductionReportsIndexRoute
   '/production/scheduling/': typeof ProductionSchedulingIndexRoute
   '/quality/batches/': typeof QualityBatchesIndexRoute
@@ -169,6 +176,7 @@ export interface FileRoutesByTo {
   '/portal/progress': typeof PortalProgressIndexRoute
   '/portal/reports': typeof PortalReportsIndexRoute
   '/production/orders': typeof ProductionOrdersIndexRoute
+  '/production/progress': typeof ProductionProgressIndexRoute
   '/production/reports': typeof ProductionReportsIndexRoute
   '/production/scheduling': typeof ProductionSchedulingIndexRoute
   '/quality/batches': typeof QualityBatchesIndexRoute
@@ -192,6 +200,7 @@ export interface FileRoutesById {
   '/portal/progress/': typeof PortalProgressIndexRoute
   '/portal/reports/': typeof PortalReportsIndexRoute
   '/production/orders/': typeof ProductionOrdersIndexRoute
+  '/production/progress/': typeof ProductionProgressIndexRoute
   '/production/reports/': typeof ProductionReportsIndexRoute
   '/production/scheduling/': typeof ProductionSchedulingIndexRoute
   '/quality/batches/': typeof QualityBatchesIndexRoute
@@ -216,6 +225,7 @@ export interface FileRouteTypes {
     | '/portal/progress/'
     | '/portal/reports/'
     | '/production/orders/'
+    | '/production/progress/'
     | '/production/reports/'
     | '/production/scheduling/'
     | '/quality/batches/'
@@ -238,6 +248,7 @@ export interface FileRouteTypes {
     | '/portal/progress'
     | '/portal/reports'
     | '/production/orders'
+    | '/production/progress'
     | '/production/reports'
     | '/production/scheduling'
     | '/quality/batches'
@@ -260,6 +271,7 @@ export interface FileRouteTypes {
     | '/portal/progress/'
     | '/portal/reports/'
     | '/production/orders/'
+    | '/production/progress/'
     | '/production/reports/'
     | '/production/scheduling/'
     | '/quality/batches/'
@@ -283,6 +295,7 @@ export interface RootRouteChildren {
   PortalProgressIndexRoute: typeof PortalProgressIndexRoute
   PortalReportsIndexRoute: typeof PortalReportsIndexRoute
   ProductionOrdersIndexRoute: typeof ProductionOrdersIndexRoute
+  ProductionProgressIndexRoute: typeof ProductionProgressIndexRoute
   ProductionReportsIndexRoute: typeof ProductionReportsIndexRoute
   ProductionSchedulingIndexRoute: typeof ProductionSchedulingIndexRoute
   QualityBatchesIndexRoute: typeof QualityBatchesIndexRoute
@@ -348,6 +361,13 @@ declare module '@tanstack/react-router' {
       path: '/production/reports'
       fullPath: '/production/reports/'
       preLoaderRoute: typeof ProductionReportsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/production/progress/': {
+      id: '/production/progress/'
+      path: '/production/progress'
+      fullPath: '/production/progress/'
+      preLoaderRoute: typeof ProductionProgressIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/production/orders/': {
@@ -451,6 +471,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortalProgressIndexRoute: PortalProgressIndexRoute,
   PortalReportsIndexRoute: PortalReportsIndexRoute,
   ProductionOrdersIndexRoute: ProductionOrdersIndexRoute,
+  ProductionProgressIndexRoute: ProductionProgressIndexRoute,
   ProductionReportsIndexRoute: ProductionReportsIndexRoute,
   ProductionSchedulingIndexRoute: ProductionSchedulingIndexRoute,
   QualityBatchesIndexRoute: QualityBatchesIndexRoute,
