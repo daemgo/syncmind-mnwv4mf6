@@ -43,7 +43,9 @@ modules:
   - moduleId: "equipment-assets"
     moduleName: "设备台账"
     locked: false
-    files: []
+    files:
+      - src/routes/equipment/assets/index.tsx
+      - src/routes/equipment/assets/$id.tsx
   - moduleId: "equipment-inspection"
     moduleName: "点检记录"
     locked: false

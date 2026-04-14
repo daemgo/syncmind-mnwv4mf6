@@ -2,68 +2,44 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-r
 import { AppShell } from "@/components/layout/app-shell"
 import type { MenuItem } from "@/components/layout/sidebar"
 import {
-  LayoutDashboard, Package, ShieldCheck, Cog, Coins, Building2, Settings,
-  ShoppingCart, CalendarDays, ClipboardList, BarChart3,
-  ScanBarcode, FileSearch, AlertTriangle, FileDown,
-  Archive, Wrench, TrendingUp,
-  Receipt, PieChart,
-  Download, Eye
+  LayoutDashboard,
+  ClipboardList,
+  CalendarClock,
+  ScanLine,
+  Activity,
+  QrCode,
+  FlaskConical,
+  TrendingUp,
+  FileDown,
+  HardDrive,
+  ClipboardCheck,
+  Gauge,
+  Receipt,
+  BarChart2,
+  Building2,
+  Download,
+  SlidersHorizontal,
 } from "lucide-react"
 import "@/styles/globals.css"
 
 const menuItems: MenuItem[] = [
-  {
-    label: "生产管理",
-    icon: Package,
-    children: [
-      { label: "订单管理", href: "/production/orders", icon: ShoppingCart },
-      { label: "排产计划", href: "/production/scheduling", icon: CalendarDays },
-      { label: "报工管理", href: "/production/reports", icon: ClipboardList },
-      { label: "生产看板", href: "/production/progress", icon: BarChart3 },
-    ],
-  },
-  {
-    label: "质量管理",
-    icon: ShieldCheck,
-    children: [
-      { label: "批次追溯", href: "/quality/batches", icon: ScanBarcode },
-      { label: "质检记录", href: "/quality/inspection", icon: FileSearch },
-      { label: "SPC控制图", href: "/quality/spc", icon: AlertTriangle },
-      { label: "报告导出", href: "/quality/reports", icon: FileDown },
-    ],
-  },
-  {
-    label: "设备管理",
-    icon: Cog,
-    children: [
-      { label: "设备台账", href: "/equipment/assets", icon: Archive },
-      { label: "点检记录", href: "/equipment/inspection", icon: Wrench },
-      { label: "OEE分析", href: "/equipment/oee", icon: TrendingUp },
-    ],
-  },
-  {
-    label: "成本管理",
-    icon: Coins,
-    children: [
-      { label: "批次成本", href: "/cost/batches", icon: Receipt },
-      { label: "利润分析", href: "/cost/profit", icon: PieChart },
-    ],
-  },
-  {
-    label: "客户门户",
-    icon: Building2,
-    children: [
-      { label: "订单进度", href: "/portal/progress", icon: Eye },
-      { label: "报告下载", href: "/portal/reports", icon: Download },
-    ],
-  },
-  {
-    label: "系统管理",
-    icon: Settings,
-    children: [
-      { label: "基础配置", href: "/system/settings", icon: Settings },
-    ],
-  },
+  { label: "仪表盘", href: "/", icon: LayoutDashboard },
+  { label: "订单管理", href: "/production/orders", icon: ClipboardList, group: "生产管理" },
+  { label: "排产计划", href: "/production/scheduling", icon: CalendarClock, group: "生产管理" },
+  { label: "报工管理", href: "/production/reports", icon: ScanLine, group: "生产管理" },
+  { label: "生产看板", href: "/production/progress", icon: Activity, group: "生产管理" },
+  { label: "批次追溯", href: "/quality/batches", icon: QrCode, group: "质量管理" },
+  { label: "质检记录", href: "/quality/inspection", icon: FlaskConical, group: "质量管理" },
+  { label: "SPC控制图", href: "/quality/spc", icon: TrendingUp, group: "质量管理" },
+  { label: "报告导出", href: "/quality/reports", icon: FileDown, group: "质量管理" },
+  { label: "设备台账", href: "/equipment/assets", icon: HardDrive, group: "设备管理" },
+  { label: "点检记录", href: "/equipment/inspection", icon: ClipboardCheck, group: "设备管理" },
+  { label: "OEE分析", href: "/equipment/oee", icon: Gauge, group: "设备管理" },
+  { label: "批次成本", href: "/cost/batches", icon: Receipt, group: "成本管理" },
+  { label: "利润分析", href: "/cost/profit", icon: BarChart2, group: "成本管理" },
+  { label: "订单进度", href: "/portal/progress", icon: Building2, group: "客户门户" },
+  { label: "报告下载", href: "/portal/reports", icon: Download, group: "客户门户" },
+  { label: "基础配置", href: "/system/settings", icon: SlidersHorizontal, group: "系统管理" },
 ]
 
 export const Route = createRootRoute({

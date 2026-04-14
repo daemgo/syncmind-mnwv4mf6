@@ -27,6 +27,7 @@ import { Route as CostProfitIndexRouteImport } from './routes/cost/profit/index'
 import { Route as CostBatchesIndexRouteImport } from './routes/cost/batches/index'
 import { Route as QualityBatchesIdRouteImport } from './routes/quality/batches/$id'
 import { Route as ProductionOrdersIdRouteImport } from './routes/production/orders/$id'
+import { Route as EquipmentAssetsIdRouteImport } from './routes/equipment/assets/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -120,9 +121,15 @@ const ProductionOrdersIdRoute = ProductionOrdersIdRouteImport.update({
   path: '/production/orders/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EquipmentAssetsIdRoute = EquipmentAssetsIdRouteImport.update({
+  id: '/equipment/assets/$id',
+  path: '/equipment/assets/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/equipment/assets/$id': typeof EquipmentAssetsIdRoute
   '/production/orders/$id': typeof ProductionOrdersIdRoute
   '/quality/batches/$id': typeof QualityBatchesIdRoute
   '/cost/batches/': typeof CostBatchesIndexRoute
@@ -143,6 +150,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/equipment/assets/$id': typeof EquipmentAssetsIdRoute
   '/production/orders/$id': typeof ProductionOrdersIdRoute
   '/quality/batches/$id': typeof QualityBatchesIdRoute
   '/cost/batches': typeof CostBatchesIndexRoute
@@ -164,6 +172,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/equipment/assets/$id': typeof EquipmentAssetsIdRoute
   '/production/orders/$id': typeof ProductionOrdersIdRoute
   '/quality/batches/$id': typeof QualityBatchesIdRoute
   '/cost/batches/': typeof CostBatchesIndexRoute
@@ -186,6 +195,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/equipment/assets/$id'
     | '/production/orders/$id'
     | '/quality/batches/$id'
     | '/cost/batches/'
@@ -206,6 +216,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/equipment/assets/$id'
     | '/production/orders/$id'
     | '/quality/batches/$id'
     | '/cost/batches'
@@ -226,6 +237,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/equipment/assets/$id'
     | '/production/orders/$id'
     | '/quality/batches/$id'
     | '/cost/batches/'
@@ -247,6 +259,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EquipmentAssetsIdRoute: typeof EquipmentAssetsIdRoute
   ProductionOrdersIdRoute: typeof ProductionOrdersIdRoute
   QualityBatchesIdRoute: typeof QualityBatchesIdRoute
   CostBatchesIndexRoute: typeof CostBatchesIndexRoute
@@ -394,11 +407,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductionOrdersIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/equipment/assets/$id': {
+      id: '/equipment/assets/$id'
+      path: '/equipment/assets/$id'
+      fullPath: '/equipment/assets/$id'
+      preLoaderRoute: typeof EquipmentAssetsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EquipmentAssetsIdRoute: EquipmentAssetsIdRoute,
   ProductionOrdersIdRoute: ProductionOrdersIdRoute,
   QualityBatchesIdRoute: QualityBatchesIdRoute,
   CostBatchesIndexRoute: CostBatchesIndexRoute,
